@@ -4,6 +4,7 @@ class Vector:
         self._y = y
 
 
+
     @property
     def x(self):
         return self._x
@@ -19,6 +20,7 @@ class Vector:
     @y.setter
     def y(self, value):
         self._y = value
+
 
 
     def __str__(self):
