@@ -1,6 +1,6 @@
 import pygame
 
-from Python.vector2 import Vector
+from Library.vector2 import Vector
     
 pygame.init()
 screen = pygame.display.set_mode((800, 600))

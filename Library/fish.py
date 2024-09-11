@@ -1,5 +1,5 @@
 import pygame
-from Library.vector import Vector
+from Library.vector2 import Vector
 from math import degrees
 
 class Fish:
