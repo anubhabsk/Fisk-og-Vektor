@@ -1,4 +1,4 @@
-from Python.fish import Fish
+from Library.fish import Fish
 
 class Flock:
     def __init__(self, fish_list):
