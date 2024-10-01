@@ -1,7 +1,7 @@
 import pygame
 import random
 from pygame.locals import *
-from Library.vector2 import Vector
+from Library.vector import Vector
 from Library.fish import Fish
 from Library.flock import Flock
 

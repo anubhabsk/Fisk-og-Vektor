@@ -1,7 +1,7 @@
 import pygame
 import random
 from pygame.locals import *
-from Library.vector2 import Vector
+from Library.vector import Vector
 from Library.fish import Fish
 from Library.flock import Flock
 
@@ -10,15 +10,7 @@ screen = pygame.display.set_mode((800, 600))
 clock = pygame.time.Clock()
 running = True
 
-# Jeg har oprettet en liste af fisk med tilfældige positioner
-fish_list = []
-for _ in range(100):
-    random_position = Vector(random.randint(0, 750), random.randint(0, 550))
-    velocity = Vector(1, 1)
-    fish = Fish(position=random_position, velocity=velocity, image_path='Library/Fish.png')
-    fish_list.append(fish)
-
-flock = Flock(fish_list)
+flock = Flock()
 
 while running:
     for event in pygame.event.get():
