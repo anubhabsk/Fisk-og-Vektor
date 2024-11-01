@@ -1,9 +1,11 @@
-from math import atan, pi
+from math import atan, pi, sqrt
 class Vector:
     def __init__(self, x, y):
         self.__x = x
         self.__y = y
 
+    def normalize(self):
+        return self/self.length
 
     @property
     def x(self):
@@ -36,6 +38,12 @@ class Vector:
         else:
             return 0
 
+    @property
+    def length(self):
+        return sqrt(self.__y**2 + self.__x**2)
+
+    def limit(self, l):
+        return self.normalize() * l
 
     def __str__(self):
         return f"Vector; x={self.__x}, y={self.__y}"
@@ -47,7 +55,13 @@ class Vector:
         return Vector(self.__x - other.__x, self.__y - other.__y)
 
     def __mul__(self, other):
-        return Vector(self.__x * other.__x, self.__y * other.__y)
+        if isinstance(other, Vector):
+            return Vector(self.__x * other.__x, self.__y * other.__y)
+        if isinstance(other, float) or isinstance(other, int):
+            return Vector(self.__x * other, self.__y * other)
 
     def __truediv__(self, other):
-        return Vector(self.__x / other.__x, self.__y / other.__y)
+        if isinstance(other, Vector):
+            return Vector(self.__x / other.__x, self.__y / other.__y)
+        if isinstance(other, float) or isinstance(other, int):
+            return Vector(self.__x / other, self.__y / other)
